@@ -56,7 +56,7 @@ body {
 <div class="header">
         <img src="IMAGENES/LOGO-ANIVERSARIO-ESPE-SEDE.png" alt="Logo Aniversario ESPE Sede">
         <div class="navbar">
-            <a href="#inicio">INICIO</a>
+            <a href="inicio.blade.php">INICIO &nbsp;<i class="fa-solid fa-house"></i></a>
             <a href="#quienes_somos">QUIENES SOMOS</a>
             <a href="#servicios">SERVICIOS</a>
             <a href="#ubicacion">UBICACION</a>
@@ -64,7 +64,9 @@ body {
             <a href="#verificacion">VERIFICACION</a>
             <a href="#call" class="call-icon"><i class="fas fa-phone"></i></a>
           </div>
+          fdgdfgdfgdfgfd
     </div><br><br>
+    
     
 </body>
 </html>
