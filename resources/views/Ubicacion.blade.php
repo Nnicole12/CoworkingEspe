@@ -156,7 +156,7 @@
 </footer>
 <footer class="footer2">
     <div class="footer-bottom2">
-        <p>© 2024 ESPE | Sede quito</p>
+        <p>© 2024 ESPE | Sede Latacunga</p>
     </div>
 </footer>
 
