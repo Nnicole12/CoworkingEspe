@@ -127,7 +127,7 @@ body {
 
             <div class="navbar">
             <a href="#inicio">INICIO</a>
-            <a href="QuienesSomos.blade.php">QUIENES SOMOS &nbsp;<i class="fa-solid fa-house"></i></a>
+            <a href="QuienesSomos.blade.php">QUIENES SOMOS &nbsp;</a>
             <a href="#servicios">SERVICIOS</a>
             <a href="Ubicacion.blade.php">UBICACION</a>
             <a href="#reserva">RESERVA</a>
