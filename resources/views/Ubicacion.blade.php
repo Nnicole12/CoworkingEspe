@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="{{ asset('CSS/Ubicacion.css') }}" rel="stylesheet">
-
-
+    <link href="{{ asset('CSS/foter.css') }}" rel="stylesheet">
     <title>Document</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
+            font-size: 16px;
         }
 
         .header-container {
@@ -28,12 +30,13 @@
         .header {
             text-align: center;
             color: green;
+            padding: 20px 0;
         }
 
         .header img {
             width: 572.09px;
             height: 100px;
-            margin: 0px 0px 15px;
+            margin-bottom: 15px;
         }
 
         .navbar {
@@ -41,6 +44,8 @@
             display: flex;
             justify-content: space-around;
             padding: 20px;
+            background-color: #FFFFFF; /* Se agrega un fondo blanco para que el menú sea visible */
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Se agrega una sombra sutil */
         }
 
         .navbar a {
@@ -58,108 +63,95 @@
         }
 
         .call-icon {
-            float: right;
+            display: flex;
+            align-items: center;
         }
 
-
-
-        .footer1 {
-    background-color: #123456;
-    color: #fff;
-    padding: 20px;
-}
-.footer2 {
-    background-color: #333333;
-    color: #fff;
-    padding: 20px;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer-column {
-    flex: 1;
-    margin-right: 20px;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 20px;
-}
-.footer-bottom1 {
-    background-color: #f5f5f5; 
-    color: #333; 
-    padding: 20px;
-}
+        .call-icon i {
+            margin-left: 5px;
+        }
     </style>
 </head>
 
 <body>
-    <div class="header-container">
+<div class="header-container">
         <div class="header">
             <img src="IMAGENES/LOGO-ANIVERSARIO-ESPE-SEDE.png" alt="Logo Aniversario ESPE Sede">
             <div class="navbar">
-                <a href="#inicio">INICIO</a>
-                <a href="#quienes_somos">QUIENES SOMOS</a>
-                <a href="#servicios">SERVICIOS</a>
-                <a href="#ubicacion">UBICACION</a>
-                <a href="#reserva">RESERVA</a>
-                <a href="#verificacion">VERIFICACION</a>
+            <a href="{{ url('/Inicio') }}">INICIO &nbsp;</a>
+                <a href="{{ url('/QuienesSomos') }}">QUIENES SOMOS</a>
+                <a href="{{ url('/Servicios') }}">SERVICIOS</a>
+                <a href="{{ url('/Ubicacion') }}">UBICACION</a>
+                <a href="{{ url('/Reservas') }}">RESERVAS</a>
                 <a href="#call" class="call-icon"><i class="fas fa-phone"></i></a>
-            </div>
         </div>
-    </div><br><br><br><br>
+    </div>
+    <br><br>
 
     <div class="rectangulo">
-
-    </div><br><br><br>
-    <div class="container">
-  <div class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.3215262476521!2d-78.61240942702352!3d-0.9358572239899882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d4610f5d33a74d%3A0x408aab614807127a!2sUniversidad%20de%20las%20Fuerzas%20Armadas%20ESPE%20Sede%20Latacunga%20(campus%20centro)!5e0!3m2!1ses!2sec!4v1707745243432!5m2!1ses!2sec" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
-</div>
-
-    
-
-    <footer class="footer1">
-    <div class="footer-container">
-        <div class="footer-column">
-            <h3>UNIDAD</h3>
-            <p>Unidad de Emprendimiento</p>
-        </div>
-        <div class="footer-column">
-            <h3>SEDES</h3>
-            <p>Latacunga</p>
-        </div>
-        <div class="footer-column">
-            <h3>DEPARTAMENTOS MATRIZ</h3>
-            <p>Ciencias de la Computación</p>
-            <p>Ciencias de la Tierra y de la Construcción</p>
-            
-        </div>
-        <div class="footer-column">
-            <h3>DEPARTAMENTOS LATACUNGA</h3>
-            <p>Ciencias Exactas</p>
-            <p>Energía y Mecánica</p>
-            <p>Ciencias Exactas</p>
-            <p>Energía y Mecánica</p>
-            <p>Ciencias Exactas</p>
-            <p>Energía y Mecánica</p>
-            <p>Ciencias Exactas</p>
-            <p>Energía y Mecánica</p>
-            <p>Ciencias Exactas</p>
-            <p>Energía y Mecánica</p>
+        <div class="info">
+            <h1>¡Visítanos!</h1>
+            <p>397P+JXC, Quijano y Ordoñez, y, Latacunga 050102</p>
+            <p>Telf: (03) 281-0206 | <a href="https://espe-el.espe.edu.ec/">https://espe-el.espe.edu.ec/</a></p>
         </div>
     </div>
-</footer>
-<footer class="footer2">
-    <div class="footer-bottom2">
-        <p>© 2024 ESPE | Sede Latacunga</p>
+
+    <div class="container" align="center">
+        <div class="map" style="width: 100%; border: 1px solid #000000;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.3215262476521!2d-78.61240942702352!3d-0.9358572239899882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d4610f5d33a74d%3A0x408aab614807127a!2sUniversidad%20de%20las%20Fuerzas%20Armadas%20ESPE%20Sede%20Latacunga%20(campus%20centro)!5e0!3m2!1ses!2sec!4v1707745243432!5m2!1ses!2sec" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
     </div>
-</footer>
+
+
+    <body>
+
+    <footer>
+        <div class="footer1">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3>UNIDAD</h3>
+                    <p>Unidad de Emprendimiento</p>
+                    <p>Teléfono: +593 2 123 4567</p>
+                    <p>Email: <a href="mailto:info@espe.edu.ec">info@espe.edu.ec</a></p>
+                </div>
+                <div class="sedes">
+                    <h3>SEDES</h3>
+                    <p>Sede Latacunga</p>
+                </div>
+                <div class="matriz">
+                    <h3>DEPARTAMENTOS MATRIZ</h3>
+                    <p>Ciencias de la Computación</p>
+                    <p>Ciencias de la Tierra y de la Construcción </p>
+                    <p>Ciencias de la Vida</p>
+                    <p>Ciencias Económicas Administrativas y de Comercio</p> 
+                    <p> Ciencias Exactas </p>
+                    <p>Eléctrica y Electrónica</p>
+                    <p>Energía y Mecánica</p>
+                    <p>Seguridad y Defensa</p>
+                </div>
+                <div class="depLt">
+                    <h3>DEPARTAMENTOS LATACUNGA</h3>
+                    <p>Ciencias Exactas</p>
+                    <p>Energía y Mecánica</p>
+                    <p>Ciencias Económicas Administrativas y de Comercio</p>
+                    <p>Eléctrica y Electrónica</p>
+                    <p>Seguridad y Defensa</p>
+                    <p>Ciencias Humanas y Sociales</p>
+                    <p>Ciencias de la Computación</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <p>© 2024 ESPE. Sede Latacunga.</p>
+        </div>
+    </footer>
+</body>
 
 </body>
 
+
+
+    
 </html>
+
