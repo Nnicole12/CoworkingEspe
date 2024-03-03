@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="{{ asset('CSS/Ubicacion.css') }}" rel="stylesheet">
+    <link href="{{ asset('CSS/foter.css') }}" rel="stylesheet">
     <title>Document</title>
     <style>
         body {
@@ -53,33 +54,7 @@
         .call-icon {
             float: right;
         }
-        .footer1 {
-            background-color: #123456;
-            color: #fff;
-            padding: 20px;
-        }
-        .footer2 {
-            background-color: #333333; /* Change this to your desired color */
-            color: #fff;
-            padding: 20px;
-        }
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-        }
-        .footer-column {
-            flex: 1;
-            margin-right: 20px;
-        }
-        .footer-bottom {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .footer-bottom1 {
-            background-color: #f5f5f5; /* Este es un color de fondo más claro */
-            color: #333; /* Asegúrate de cambiar también el color del texto para que sea legible */
-            padding: 20px;
-        }
+        
         .card {
             width: 190px;
             height: 254px;
@@ -128,17 +103,16 @@
 </head>
 <body>
     <div class="header-container">
-        <div class="header">
+    <div class="header">
             <img src="IMAGENES/LOGO-ANIVERSARIO-ESPE-SEDE.png" alt="Logo Aniversario ESPE Sede">
             <div class="navbar">
-                <a href="#inicio">INICIO</a>
-                <a href="#quienes_somos">QUIENES SOMOS</a>
-                <a href="#servicios">SERVICIOS</a>
-                <a href="#ubicacion">UBICACION</a>
-                <a href="#reserva">RESERVA</a>
-                <a href="#verificacion">VERIFICACION</a>
+            <a href="{{ url('/Inicio') }}">INICIO &nbsp;</a>
+                <a href="{{ url('/QuienesSomos') }}">QUIENES SOMOS</a>
+                <a href="{{ url('/Servicios') }}">SERVICIOS</a>
+                <a href="{{ url('/Ubicacion') }}">UBICACION</a>
+                <a href="{{ url('/Reservas') }}">RESERVAS</a>
                 <a href="#call" class="call-icon"><i class="fas fa-phone"></i></a>
-            </div>
+        </div>
         </div>
     </div><br><br><br><br>
     <div class="rectangulo"></div>
@@ -158,50 +132,53 @@
         <p>Este aula ofrece un espacio dinámico y moderno, perfecto para sesiones de colaboración y actividades grupales. Con su diseño versátil y tecnología de vanguardia, este espacio promueve la innovación y el intercambio de ideas. Desde talleres creativos hasta sesiones de lluvia de ideas, este aula proporciona el entorno ideal para desarrollar proyectos emocionantes y llevar las ideas a la vida.</p>
         <a href="#reserva" class="reserve-btn" style="display: block; width: 337.5px; margin: 10px auto 0; text-align: center; line-height: 40px;">Reserva</a>
     </div>
-    
-    
-    
-    
-    
-    
-    
-        
 
-    <footer class="footer1">
-    <div class="footer-container">
-        <div class="footer-column">
-            <h3>UNIDAD</h3>
-            <p>Unidad de Emprendimiento</p>
+
+
+    <body>
+    <footer>
+        <div class="footer1">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3>UNIDAD</h3>
+                    <p>Unidad de Emprendimiento</p>
+                    <p>Teléfono: +593 2 123 4567</p>
+                    <p>Email: <a href="mailto:info@espe.edu.ec">info@espe.edu.ec</a></p>
+                </div>
+                <div class="sedes">
+                    <h3>SEDES</h3>
+                    <p>Sede Latacunga</p>
+                </div>
+                <div class="matriz">
+                    <h3>DEPARTAMENTOS MATRIZ</h3>
+                    <p>Ciencias de la Computación</p>
+                    <p>Ciencias de la Tierra y de la Construcción </p>
+                    <p>Ciencias de la Vida</p>
+                    <p>Ciencias Económicas Administrativas y de Comercio</p> 
+                    <p> Ciencias Exactas </p>
+                    <p>Eléctrica y Electrónica</p>
+                    <p>Energía y Mecánica</p>
+                    <p>Seguridad y Defensa</p>
+                </div>
+                <div class="depLt">
+                    <h3>DEPARTAMENTOS LATACUNGA</h3>
+                    <p>Ciencias Exactas</p>
+                    <p>Energía y Mecánica</p>
+                    <p>Ciencias Económicas Administrativas y de Comercio</p>
+                    <p>Eléctrica y Electrónica</p>
+                    <p>Seguridad y Defensa</p>
+                    <p>Ciencias Humanas y Sociales</p>
+                    <p>Ciencias de la Computación</p>
+                </div>
+            </div>
         </div>
-        <div class="footer-column">
-            <h3>SEDES</h3>
-            <p>Latacunga</p>
+
+        <div class="footer-copyright">
+            <p>© 2024 ESPE. Sede Latacunga.</p>
         </div>
-        <div class="footer-column">
-            <h3>DEPARTAMENTOS MATRIZ</h3>
-            <p>Ciencias de la Computación</p>
-            <p>Ciencias de la Tierra y de la Construcción</p>
-            <!-- Add more departments as needed -->
-        </div>
-        <div class="footer-column">
-            <h3>DEPARTAMENTOS LATACUNGA</h3>
-            <p>Ciencias Exactas</p>
-            <p>Energía y Mecánica</p>
-            <p>Ciencias Exactas</p>
-            <p>Energía y Mecánica</p>
-            <p>Ciencias Exactas</p>
-            <p>Energía y Mecánica</p>
-            <p>Ciencias Exactas</p>
-            <p>Energía y Mecánica</p>
-            <p>Ciencias Exactas</p>
-            <p>Energía y Mecánica</p>
-        </div>
-    </div>
-</footer>
-<footer class="footer2">
-    <div class="footer-bottom2">
-        <p>© 2024 ESPE | Sede quito</p>
-    </div>
-</footer>
+    </footer>
+</body>
+
+
 </body>
 </html>
