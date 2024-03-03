@@ -1,0 +1,36 @@
+.rectangulo {
+    width: 770px;
+    height: 400px;
+    margin: 0 auto; /* Centrar horizontalmente */
+    margin-top: 200px; /* Ajustar la distancia desde la parte superior */
+    background: #13795B;
+    border: 1px solid #000000;
+    border-radius: 13px;
+}
+body {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100vh; /* Ajustar al 100% del viewport height */
+}
+
+.map {
+    width: 100%;
+    /* Usar flex-grow para tomar el máximo espacio disponible */
+    flex-grow: 1;
+    /* Alinear horizontalmente al centro */
+    margin: 0 auto;
+    /* Aquí puedes añadir estilos adicionales para tu mapa */
+    border: 1px solid #000000;
+}
+
+.info {
+    background-color: #13795B;
+    color: white;
+    padding: 50px;
+    width: 50%;
+}
