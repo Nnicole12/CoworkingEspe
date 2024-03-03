@@ -20,7 +20,7 @@
             text-align: center;
             color: green;
             padding: 20px;
-            bottom: 10px;
+            bottom: 50px;
         }
 
         .header img {
@@ -64,16 +64,18 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1;
-            bottom: 20px;
+            bottom: 50px;
         }
 
         .modal {
             margin-bottom: 20px;
             display: none;
         }
+
         .modal-res {
             margin-bottom: 20px;
             display: none;
+            margin-top: 40px;
             max-width: 150%;
         }
 
@@ -86,6 +88,7 @@
             max-height: 700px; 
             overflow-y: auto; 
             margin: 0 auto; 
+            margin-left: -10%;
             margin-bottom: 20px;
         }
 
@@ -99,7 +102,7 @@
 
         .modal-content label {
             flex: 1 0 160px; 
-            margin-right: 20px; 
+            margin-right: 32px; 
             margin-bottom: -15px;  
             margin-top: 10px;
         }
@@ -151,7 +154,7 @@
         #reservation-form button[type="submit"] {
             width: auto; 
             max-width: 200px; 
-            margin-left: 250px;
+            margin-left: 200px;
         }
 
         #terms-modal,#confirmation-modal{
@@ -162,6 +165,13 @@
             display: inline-block; 
             margin-bottom: 10px;
         }
+        #aparatos-externos{
+            margin-right: 100px;
+        }
+
+        #aparatos-externos-label {
+            margin-right: 5px; 
+        }
 
         #hora_inicio_fin,
         #fecha_inicio_fin {
@@ -169,11 +179,10 @@
             margin-right: 350px; 
             margin-bottom: 20px;
         }
-
-        /* Ajusta el espacio entre los radio buttons y su texto */
+        
         .modal-content input[type="radio"] {
-            margin-right: 10px;
-            margin-top: 10px;
+            margin-left: -15px;
+            margin-top: 15px;
         }
 
         .modal-content button[type="submit"]:hover {
@@ -196,18 +205,21 @@
             cursor: pointer;
             border-radius: 8px;
         }
+
+        
     </style>
 </head>
 <body>
     <div class="header">
         <img src="IMAGENES/LOGO-ANIVERSARIO-ESPE-SEDE.png" alt="Logo Aniversario ESPE Sede">
         <div class="navbar">
-        <a href="{{ url('/Inicio') }}">INICIO &nbsp;</a>
-                <a href="{{ url('/QuienesSomos') }}">QUIENES SOMOS</a>
-                <a href="{{ url('/Servicios') }}">SERVICIOS</a>
-                <a href="{{ url('/Ubicacion') }}">UBICACION</a>
-                <a href="{{ url('/Reservas') }}">RESERVAS</a>
-                <a href="#call" class="call-icon"><i class="fas fa-phone"></i></a>
+            <a href="#inicio">INICIO</a>
+            <a href="#quienes_somos">QUIENES SOMOS</a>
+            <a href="#servicios">SERVICIOS</a>
+            <a href="#ubicacion">UBICACION</a>
+            <a id="reserva-link" href="#" onclick="resetearFormulario()">RESERVA</a>
+            <a href="#verificacion">VERIFICACION</a>
+            <a href="#call" class="call-icon"><i class="fas fa-phone"></i></a>
         </div>
     </div>
     
@@ -266,11 +278,13 @@
                         <label for="fecha_final">Fecha final:</label>
                         <input type="date" id="fecha_final" name="fecha_final" required><br>
                     </div>
-                    <label for="aparatos_externos">Aparatos Externos:</label><br>
-                    <input type="radio" id="proyector" name="aparatos_externos" value="Proyector">
-                    <label for="proyector">Proyector</label><br>
-                    <input type="radio" id="pizarra_inteligente" name="aparatos_externos" value="Pizarra Inteligente">
-                    <label for="pizarra_inteligente">Pizarra Inteligente</label><br>
+                    <label id="aparatos-externos-label" for="aparatos_externos">Aparatos Externos:</label><br>
+                    <div>
+                        <input type="radio" id="proyector" name="aparatos_externos" value="Proyector">
+                        <label for="proyector">Proyector</label>
+                        <input type="radio" id="pizarra_inteligente" name="aparatos_externos" value="Pizarra Inteligente">
+                        <label for="pizarra_inteligente">Pizarra Inteligente</label>
+                    </div><br>
                     <center><button type="submit">RESERVAR</button></center>
                 </form>
             </div>
@@ -291,8 +305,7 @@
             </div>
         </div>
     </div>
-    
-    <body>
+
     <footer>
         <div class="footer1">
             <div class="footer-content">
@@ -334,7 +347,6 @@
             <p>© 2024 ESPE. Sede Latacunga.</p>
         </div>
     </footer>
-</body>
 
     <script>
         document.getElementById('reserva-link').addEventListener('click', function(event) {
@@ -372,6 +384,7 @@
             var horaInicioFin = document.getElementById("hora_inicio_fin");
             var fechaInicioFin = document.getElementById("fecha_inicio_fin");
 
+
             if (tiempoUso === "1") {
                 horaInicioFin.style.display = "block";
                 fechaInicioFin.style.display = "none";
@@ -390,8 +403,5 @@
             }
         }
     </script>
-
-
-    
 </body>
 </html>
