@@ -10,34 +10,34 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            position: relative;
-            min-height: 100vh;
         }
-
+        .header-container {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: #FFFFFF;
+            z-index: 1000;
+            /* Asegura que el contenedor esté por encima de otros elementos */
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
         .header {
             text-align: center;
             color: green;
-            padding: 20px;
-            bottom: 50px;
         }
-
         .header img {
             width: 572.09px;
             height: 100px;
-            margin-bottom: 15px;
+            margin: 0px 0px 15px;
         }
-
         .navbar {
-            background-color: #FFFFFF;
             overflow: hidden;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             padding: 20px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            background-color: #FFFFFF;
         }
-
         .navbar a {
             color: black;
             text-align: center;
@@ -45,266 +45,106 @@
             text-decoration: none;
             border-radius: 25px;
             font-size: 17px;
-            margin: 0 10px;
         }
-
         .navbar a:hover {
             background-color: #ddd;
             color: black;
         }
-
         .call-icon {
-            margin-left: auto;
+            float: right;
         }
-
-        .modal-container {
-            display: flex;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            bottom: 50px;
-        }
-
-        .modal {
-            margin-bottom: 20px;
-            display: none;
-        }
-
-        .modal-res {
-            margin-bottom: 20px;
-            display: none;
-            margin-top: 40px;
-            max-width: 150%;
-        }
-
-        .modal-content {
-            background-color: white;
-            padding: 20px;
-            border: 1px solid #666f88;
-            border-radius: 10px;
-            max-width: 700px; 
-            max-height: 700px; 
-            overflow-y: auto; 
-            margin: 0 auto; 
-            margin-left: -10%;
-            margin-bottom: 20px;
-        }
-
-        .modal-content form {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            max-width: 800px;
-            
-        }
-
-        .modal-content label {
-            flex: 1 0 160px; 
-            margin-right: 32px; 
-            margin-bottom: -15px;  
-            margin-top: 10px;
-        }
-
-        .modal-content input[type="text"],
-        .modal-content input[type="number"],
-        .modal-content input[type="date"],
-        .modal-content select {
-            flex: 2 0 calc(100% - 210px); /* El input ocupa el espacio restante, restando el ancho del label y el margen */
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 16px;
-            margin-bottom: 18px;
-        }
-
-        .modal-content button[type="submit"] {
-            width: 100%; 
-            padding: 12px;
-            background-color: #4CAF50;
-            color: white;
+        hr {
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            text-align: center;
-            transition: background-color 0.3s;
-            margin-top: 50px; 
-            display: flex; 
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
         }
-
-        #reservation-form {
-            margin-right: 100px; 
+       
+        .card {
+            width: 190px;
+            height: 254px;
+            background: white;
+            border-radius: 10px;
+            transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-
-        #adicional-info {
-            margin-top: 100px; 
-            margin-bottom: 100px; 
-            width: 40%; 
+    
+        .shadow {
+            box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+                        0 0  0 2px rgb(190, 190, 190),
+                        0.3em 0.3em 1em rgba(0,0,0,0.3);
         }
-
-        @media (max-width: 768px) {
-            #adicional-info {
-                width: 150%; 
-            }
+    
+        .box {
+            border: 2px solid #333;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
         }
-
-        #reservation-form button[type="submit"] {
-            width: auto; 
-            max-width: 200px; 
-            margin-left: 200px;
-        }
-
-        #terms-modal,#confirmation-modal{
-            margin-top: 150px;
-        }
-
-        #tiempo_uso {
-            display: inline-block; 
+        .box img {
+            width: 100%;
+            height: auto;
             margin-bottom: 10px;
         }
-        #aparatos-externos{
-            margin-right: 100px;
+        .box p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
         }
-
-        #aparatos-externos-label {
-            margin-right: 5px; 
+        .reserve-btn {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
         }
-
-        #hora_inicio_fin,
-        #fecha_inicio_fin {
-            display: none;
-            margin-right: 350px; 
-            margin-bottom: 20px;
-        }
-        
-        .modal-content input[type="radio"] {
-            margin-left: -15px;
-            margin-top: 15px;
-        }
-
-        .modal-content button[type="submit"]:hover {
+        .reserve-btn:hover {
             background-color: #45a049;
         }
-
-        #acceptar-btn,
-        #rechazar-btn,
-        #confirm-yes-btn,
-        #confirm-no-btn {
-            background-color: green;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 8px;
-        }
-
-        
-    </style>
+    </style>    
 </head>
 <body>
-    <div class="header">
-        <img src="IMAGENES/LOGO-ANIVERSARIO-ESPE-SEDE.png" alt="Logo Aniversario ESPE Sede">
-        <div class="navbar">
-            <a href="#inicio">INICIO</a>
-            <a href="#quienes_somos">QUIENES SOMOS</a>
-            <a href="#servicios">SERVICIOS</a>
-            <a href="#ubicacion">UBICACION</a>
-            <a id="reserva-link" href="#" onclick="resetearFormulario()">RESERVA</a>
-            <a href="#verificacion">VERIFICACION</a>
-            <a href="#call" class="call-icon"><i class="fas fa-phone"></i></a>
+    <div class="header-container">
+        <div class="header">
+            <img src="IMAGENES/LOGO-ANIVERSARIO-ESPE-SEDE.png" alt="Logo Aniversario ESPE Sede">
+            <div class="navbar">
+                <a href="{{ url('/Inicio') }}">INICIO &nbsp;</a>
+                <a href="{{ url('/QuienesSomos') }}">QUIENES SOMOS</a>
+                <a href="{{ url('/Servicios') }}">SERVICIOS</a>
+                <a href="{{ url('/Ubicacion') }}">UBICACION</a>
+                <a href="{{ url('/Reservas') }}">RESERVAS</a>
+                <a href="#call" class="call-icon"><i class="fas fa-phone"></i></a>
+            </div>
         </div>
+    </div><br><br><br><br>
+    <hr>
+    <p style="text-align: center;">Servicios</p>
+    <hr>
+   
+    <div class="rectangulo"></div>
+
+    
+    <div class="card shadow" style="width: 787.5px; height: 354px; margin: 100px auto 20px; padding: 23px;">
+        <h2>Primer espacio</h2>
+        <p>Ubicado en el pasillo central</p>
+        <img src="public/IMAGENES/Cespacio.jpg" alt="Espacio 1" style="width: 100%;">
+        <p>Este aula ofrece un ambiente acogedor y versátil, ideal para reuniones colaborativas y sesiones de trabajo enfocadas en la resolución de problemas. Con su disposición flexible y equipamiento moderno, este espacio se adapta a una variedad de actividades, desde reuniones de equipo hasta presentaciones interactivas. Diseñado para fomentar la participación y la creatividad, este aula proporciona un entorno inspirador donde las ideas pueden fluir libremente y los proyectos pueden tomar forma con facilidad.</p>
+        <a href="#reserva" class="reserve-btn" style="display: block; width: 337.5px; margin: 10px auto 0; text-align: center; line-height: 40px;">Reserva</a>
     </div>
     
-    <div class="modal-container">
-        <div id="terms-modal" class="modal">
-            <div class="modal-content">
-                <h2>Términos y Condiciones</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod enim vitae nunc tempor, in vulputate ex efficitur.</p>
-                <button id="acceptar-btn">Aceptar</button>
-                <button id="rechazar-btn">Rechazar</button>
-            </div>
-        </div>
-        <div id="confirmation-modal" class="modal">
-            <div class="modal-content">
-                <h2>Pertenece a la Comunidad de la ESPE?</h2>
-                <button id="confirm-yes-btn">Sí</button>
-                <button id="confirm-no-btn">No</button>
-            </div>
-        </div>
-        
-        <div id="reservation-form" class="modal-res">
-            <div class="modal-content">
-                <center><h2>Formulario de Registro</h2></center>
-                <form>
-                    <label for="nombre">Nombres:</label>
-                    <input type="text" id="nombre" name="nombre" required><br>
-                    <label for="apellido">Apellidos:</label>
-                    <input type="text" id="apellido" name="apellido" required><br>
-                    <label for="ID">ID:</label>
-                    <input type="text" id="ID" name="ID" required><br>
-                    <label for="correo">Correo Institucional:</label>
-                    <input type="text" id="correo" name="correo" required><br>
-                    <label for="carrera">Ingrese la carrera:</label>
-                    <input type="text" id="carrera" name="carrera" required><br>
-                    <label for="nivel">Ingrese el nivel:</label>
-                    <input type="text" id="nivel" name="nivel" required><br>
-                    <label for="num_personas">Ingrese el número de personas:</label>
-                    <input type="number" id="num_personas" name="num_personas" min="1" max="20" required><br>
-                    <label for="tiempo_uso">Tiempo de uso:</label>
-                    <select id="tiempo_uso" name="tiempo_uso" required onchange="mostrarCampos()">
-                        <option value="">Seleccione</option>
-                        <option value="1">Horas</option>
-                        <option value="2">Días</option>
-                    </select><br>
-
-                    <div id="hora_inicio_fin" style="display: none;">
-                        <label for="hora_inicio">Hora de inicio:</label>
-                        <input type="time" id="hora_inicio" name="hora_inicio" required><br>
-                        <label for="hora_final">Hora final:</label>
-                        <input type="time" id="hora_final" name="hora_final" required><br>
-                    </div>
-
-                    <div id="fecha_inicio_fin" style="display: none;">
-                        <label for="fecha_inicio">Fecha de inicio:</label>
-                        <input type="date" id="fecha_inicio" name="fecha_inicio" required><br>
-                        <label for="fecha_final">Fecha final:</label>
-                        <input type="date" id="fecha_final" name="fecha_final" required><br>
-                    </div>
-                    <label id="aparatos-externos-label" for="aparatos_externos">Aparatos Externos:</label><br>
-                    <div>
-                        <input type="radio" id="proyector" name="aparatos_externos" value="Proyector">
-                        <label for="proyector">Proyector</label>
-                        <input type="radio" id="pizarra_inteligente" name="aparatos_externos" value="Pizarra Inteligente">
-                        <label for="pizarra_inteligente">Pizarra Inteligente</label>
-                    </div><br>
-                    <center><button type="submit">RESERVAR</button></center>
-                </form>
-            </div>
-        </div>
-        <div id="adicional-info" class="modal">
-            <div class="modal-content" >
-                <div class="dprimera-desc">
-                    <h3>Primer Espacio</h3>
-                    <p>Ubicado en el pasillo...</p>
-                </div>
-                <div class="image-slider">
-                    <img src="imagen1.jpg" alt="Imagen 1">
-                    <img src="imagen2.jpg" alt="Imagen 2">
-                </div>
-                <div class="descripcionion">
-                    <p>Descripcion...</p>
-                </div>
-            </div>
-        </div>
+    <div class="card shadow" style="width: 787.5px; height: 354px; margin: 20px auto 20px; padding: 23px;">
+        <h2>Segundo espacio</h2>
+        <p>Ubicado en el pasillo del edificio</p>
+        <img src="public/IMAGENES/Cespacio2.jpg" alt="Espacio 2" style="width: 100%;">
+        <p>Este aula ofrece un espacio dinámico y moderno, perfecto para sesiones de colaboración y actividades grupales. Con su diseño versátil y tecnología de vanguardia, este espacio promueve la innovación y el intercambio de ideas. Desde talleres creativos hasta sesiones de lluvia de ideas, este aula proporciona el entorno ideal para desarrollar proyectos emocionantes y llevar las ideas a la vida.</p>
+        <a href="#reserva" class="reserve-btn" style="display: block; width: 337.5px; margin: 10px auto 0; text-align: center; line-height: 40px;">Reserva</a>
     </div>
+    
+        
+
+    <body>
 
     <footer>
         <div class="footer1">
@@ -347,61 +187,7 @@
             <p>© 2024 ESPE. Sede Latacunga.</p>
         </div>
     </footer>
+</body>
 
-    <script>
-        document.getElementById('reserva-link').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.getElementById('terms-modal').style.display = 'block';
-        });
-
-        document.getElementById('acceptar-btn').addEventListener('click', function() {
-            document.getElementById('terms-modal').style.display = 'none';
-            document.getElementById('confirmation-modal').style.display = 'block';
-        });
-
-        document.getElementById('confirm-yes-btn').addEventListener('click', function() {
-            document.getElementById('confirmation-modal').style.display = 'none';
-            document.getElementById('reservation-form').style.display = 'block';
-            document.getElementById('adicional-info').style.display = 'block'; 
-        });
-
-        document.getElementById('confirm-no-btn').addEventListener('click', function() {
-            document.getElementById('confirmation-modal').style.display = 'none';
-        });
-
-        function resetearFormulario() {
-            document.getElementById('confirmation-modal').style.display = 'none';
-            document.getElementById('reservation-form').style.display = 'none'; 
-            document.getElementById('adicional-info').style.display = 'none';
-            document.getElementById('reservation-form').reset(); 
-            document.getElementById('hora_inicio_fin').style.display = 'none';
-            document.getElementById('fecha_inicio_fin').style.display = 'none'; 
-            document.getElementById('terms-modal').style.display = 'block';
-        }
-
-        function mostrarCampos() {
-            var tiempoUso = document.getElementById("tiempo_uso").value;
-            var horaInicioFin = document.getElementById("hora_inicio_fin");
-            var fechaInicioFin = document.getElementById("fecha_inicio_fin");
-
-
-            if (tiempoUso === "1") {
-                horaInicioFin.style.display = "block";
-                fechaInicioFin.style.display = "none";
-            } else if (tiempoUso === "2") {
-                horaInicioFin.style.display = "none";
-                fechaInicioFin.style.display = "block";
-            } else {
-                horaInicioFin.style.display = "none";
-                fechaInicioFin.style.display = "none";
-            }
-        }
-        // Cerrar modal haciendo clic fuera de él
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('terms-modal')) {
-                document.getElementById('terms-modal').style.display = 'none';
-            }
-        }
-    </script>
 </body>
 </html>
