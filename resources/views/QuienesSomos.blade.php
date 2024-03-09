@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="{{ asset('CSS/QuienesSomos.css') }}" rel="stylesheet">
     <link href="{{ asset('CSS/foter.css') }}" rel="stylesheet">
-
-
     <title>Document</title>
     <style>
         body {
@@ -63,6 +61,18 @@
             float: right;
         }
 
+        /* Estilo para .beneficios */
+        .beneficios {
+            background-color: #FF4D27;
+            color: black;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .beneficios h1 {
+            font-size: 24px;
+            margin: 0;
+        }
         
 
     </style>
@@ -73,7 +83,7 @@
         <div class="header">
             <img src="IMAGENES/LOGO-ANIVERSARIO-ESPE-SEDE.png" alt="Logo Aniversario ESPE Sede">
             <div class="navbar">
-            <a href="{{ url('/Inicio') }}">INICIO &nbsp;</a>
+                <a href="{{ url('/Inicio') }}">INICIO &nbsp;</a>
                 <a href="{{ url('/QuienesSomos') }}">QUIENES SOMOS</a>
                 <a href="{{ url('/Servicios') }}">SERVICIOS</a>
                 <a href="{{ url('/Ubicacion') }}">UBICACION</a>
@@ -89,8 +99,10 @@
     <div class="box"><br>
         <div class="title">VISIÓN</div>
         <div class="content"></div>
-    </div><br>
-    BENEFICIOS
+    </div><br><BR>
+    <section class="beneficios">
+        <h1>BENEFICIOS</h1>
+    </section><BR><BR>
     <div class="wrapper">
         <div class="content-container">
             <div class="text-container">
@@ -105,11 +117,31 @@
                     intercambio de ideas y la generación de nuevas soluciones.</p>
             </div>
             <div class="image-container">
-                <img src="IMAGENES/Cespacio2.jpg" alt="Descripción de la imagen">
+            <img src="{{ asset('IMAGENES/image.png') }}" alt="Descripción de la imagen">
+            </div>
             </div>
         </div>
 
-    </div>
+    </div><br><br><br>
+
+    <div class="wrapper">
+        <div class="content-container-orange">
+            <div class="image-container-orange">
+            <img src="{{ asset('IMAGENES/Imagen3.jpg') }}" alt="Descripción de la imagen">
+            </div>
+            <div class="text-container-orange">
+                <h1>NETWORKING Y OPORTUNIDADES DE COLABORACIÓN</h1>
+                <br><br>
+                <p>El coworking ofrece una excelente oportunidad para establecer contactos 
+                y colaborar con otros profesionales y empresarios. Al trabajar en un 
+                entorno compartido, los usuarios pueden interactuar con personas de 
+                diversas industrias y disciplinas, lo que puede generar nuevas ideas, 
+                proyectos conjuntos, e incluso oportunidades de negocio. La colaboración 
+                entre miembros del espacio de coworking puede llevar a sinergias únicas y
+                al desarrollo de proyectos innovadores que de otra manera podrían no haber surgido.</p>
+            </div>
+        </div>
+    </div><br><br><br>
 
     <div class="wrapper">
         <div class="content-container-green">
@@ -126,59 +158,56 @@
                 </p>
             </div>
             <div class="image-container-green">
-                <img src="IMAGENES/Coworking.jpg" alt="Descripción de la imagen">
+            <img src="{{ asset('IMAGENES/Cespacio2.jpg') }}" alt="Descripción de la imagen">
             </div>
         </div>
 
+    </div><br><br><br>
+
+    
+
+</body>
+
+<footer>
+    <div class="footer1">
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>UNIDAD</h3>
+                <p>Unidad de Emprendimiento</p>
+                <p>Teléfono: +593 2 123 4567</p>
+                <p>Email: <a href="mailto:info@espe.edu.ec">info@espe.edu.ec</a></p>
+            </div>
+            <div class="sedes">
+                <h3>SEDES</h3>
+                <p>Sede Latacunga</p>
+            </div>
+            <div class="matriz">
+                <h3>DEPARTAMENTOS MATRIZ</h3>
+                <p>Ciencias de la Computación</p>
+                <p>Ciencias de la Tierra y de la Construcción </p>
+                <p>Ciencias de la Vida</p>
+                <p>Ciencias Económicas Administrativas y de Comercio</p>
+                <p>Ciencias Exactas </p>
+                <p>Eléctrica y Electrónica</p>
+                <p>Energía y Mecánica</p>
+                <p>Seguridad y Defensa</p>
+            </div>
+            <div class="depLt">
+                <h3>DEPARTAMENTOS LATACUNGA</h3>
+                <p>Ciencias Exactas</p>
+                <p>Energía y Mecánica</p>
+                <p>Ciencias Económicas Administrativas y de Comercio</p>
+                <p>Eléctrica y Electrónica</p>
+                <p>Seguridad y Defensa</p>
+                <p>Ciencias Humanas y Sociales</p>
+                <p>Ciencias de la Computación</p>
+            </div>
+        </div>
     </div>
 
-   
-
-</body>
-
-<body>
-
-    <footer>
-        <div class="footer1">
-            <div class="footer-content">
-                <div class="contact-info">
-                    <h3>UNIDAD</h3>
-                    <p>Unidad de Emprendimiento</p>
-                    <p>Teléfono: +593 2 123 4567</p>
-                    <p>Email: <a href="mailto:info@espe.edu.ec">info@espe.edu.ec</a></p>
-                </div>
-                <div class="sedes">
-                    <h3>SEDES</h3>
-                    <p>Sede Latacunga</p>
-                </div>
-                <div class="matriz">
-                    <h3>DEPARTAMENTOS MATRIZ</h3>
-                    <p>Ciencias de la Computación</p>
-                    <p>Ciencias de la Tierra y de la Construcción </p>
-                    <p>Ciencias de la Vida</p>
-                    <p>Ciencias Económicas Administrativas y de Comercio</p> 
-                    <p> Ciencias Exactas </p>
-                    <p>Eléctrica y Electrónica</p>
-                    <p>Energía y Mecánica</p>
-                    <p>Seguridad y Defensa</p>
-                </div>
-                <div class="depLt">
-                    <h3>DEPARTAMENTOS LATACUNGA</h3>
-                    <p>Ciencias Exactas</p>
-                    <p>Energía y Mecánica</p>
-                    <p>Ciencias Económicas Administrativas y de Comercio</p>
-                    <p>Eléctrica y Electrónica</p>
-                    <p>Seguridad y Defensa</p>
-                    <p>Ciencias Humanas y Sociales</p>
-                    <p>Ciencias de la Computación</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-copyright">
-            <p>© 2024 ESPE. Sede Latacunga.</p>
-        </div>
-    </footer>
-</body>
+    <div class="footer-copyright">
+        <p>© 2024 ESPE. Sede Latacunga.</p>
+    </div>
+</footer>
 
 </html>
