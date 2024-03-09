@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="{{ asset('CSS/Ubicacion.css') }}" rel="stylesheet">
     <link href="{{ asset('CSS/foter.css') }}" rel="stylesheet">
     <title>Document</title>
     <style>
@@ -54,7 +53,12 @@
         .call-icon {
             float: right;
         }
-        
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+       
         .card {
             width: 190px;
             height: 254px;
@@ -103,21 +107,26 @@
 </head>
 <body>
     <div class="header-container">
-    <div class="header">
+        <div class="header">
             <img src="IMAGENES/LOGO-ANIVERSARIO-ESPE-SEDE.png" alt="Logo Aniversario ESPE Sede">
             <div class="navbar">
-            <a href="{{ url('/Inicio') }}">INICIO &nbsp;</a>
+                <a href="{{ url('/Inicio') }}">INICIO &nbsp;</a>
                 <a href="{{ url('/QuienesSomos') }}">QUIENES SOMOS</a>
                 <a href="{{ url('/Servicios') }}">SERVICIOS</a>
                 <a href="{{ url('/Ubicacion') }}">UBICACION</a>
                 <a href="{{ url('/Reservas') }}">RESERVAS</a>
                 <a href="#call" class="call-icon"><i class="fas fa-phone"></i></a>
-        </div>
+            </div>
         </div>
     </div><br><br><br><br>
+    <hr>
+    <p style="text-align: center;">Servicios</p>
+    <hr>
+   
     <div class="rectangulo"></div>
 
-    <div class="card shadow" style="width: 787.5px; height: 354px; margin: 100px auto 20px;">
+    
+    <div class="card shadow" style="width: 787.5px; height: 354px; margin: 100px auto 20px; padding: 23px;">
         <h2>Primer espacio</h2>
         <p>Ubicado en el pasillo central</p>
         <img src="public/IMAGENES/Cespacio.jpg" alt="Espacio 1" style="width: 100%;">
@@ -125,17 +134,18 @@
         <a href="#reserva" class="reserve-btn" style="display: block; width: 337.5px; margin: 10px auto 0; text-align: center; line-height: 40px;">Reserva</a>
     </div>
     
-    <div class="card shadow" style="width: 787.5px; height: 354px; margin: 20px auto 20px;">
+    <div class="card shadow" style="width: 787.5px; height: 354px; margin: 20px auto 20px; padding: 23px;">
         <h2>Segundo espacio</h2>
         <p>Ubicado en el pasillo del edificio</p>
         <img src="public/IMAGENES/Cespacio2.jpg" alt="Espacio 2" style="width: 100%;">
         <p>Este aula ofrece un espacio dinámico y moderno, perfecto para sesiones de colaboración y actividades grupales. Con su diseño versátil y tecnología de vanguardia, este espacio promueve la innovación y el intercambio de ideas. Desde talleres creativos hasta sesiones de lluvia de ideas, este aula proporciona el entorno ideal para desarrollar proyectos emocionantes y llevar las ideas a la vida.</p>
         <a href="#reserva" class="reserve-btn" style="display: block; width: 337.5px; margin: 10px auto 0; text-align: center; line-height: 40px;">Reserva</a>
     </div>
-
-
+    
+        
 
     <body>
+
     <footer>
         <div class="footer1">
             <div class="footer-content">
@@ -178,7 +188,6 @@
         </div>
     </footer>
 </body>
-
 
 </body>
 </html>
