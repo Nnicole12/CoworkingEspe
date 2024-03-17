@@ -9,6 +9,8 @@ class FormularioComunidad extends Model
 {
     protected $table = 'formulario_comunidad';
 
+    
+
     protected $fillable = [
         'nombre',
         'apellido',
